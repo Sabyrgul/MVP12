@@ -22,11 +22,15 @@ class MainActivity : AppCompatActivity(), MainActivityView {
 
     override fun updateCounterView(model: Int) {
         if(model==10)
-            Toast.makeText(this, "Congratulations!!!", Toast.LENGTH_SHORT).show()
+            sendToastMessage("Congratulations")
         if(model==15)
             binding.tvCounter.setTextColor(resources.getColor(R.color.red))
         else binding.tvCounter.setTextColor(resources.getColor(R.color.black))
         binding.tvCounter.text=model.toString()
+    }
+
+    override fun sendToastMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun onClick(){
