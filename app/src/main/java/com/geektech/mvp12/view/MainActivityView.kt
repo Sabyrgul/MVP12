@@ -4,5 +4,7 @@ interface MainActivityView {
 
     fun updateCounterView(model:Int)
 
-    fun sendToastMessage(message: String)
+    fun sendToastMessage()
+
+    fun changeColor()
 }
