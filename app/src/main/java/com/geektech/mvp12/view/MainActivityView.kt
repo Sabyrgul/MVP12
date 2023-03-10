@@ -1,10 +1,22 @@
 package com.geektech.mvp12.view
 
-interface MainActivityView {
+import androidx.lifecycle.ViewModel
+import com.geektech.mvp12.model.CounterModel
 
-    fun updateCounterView(model:Int)
+class MainActivityViewModel:ViewModel() {
 
-    fun sendToastMessage()
+    private val counterModel= CounterModel()
 
-    fun changeColor()
+    fun increment(){
+        counterModel.increment()
+    }
+
+    fun decrement(){
+        counterModel.decrement()
+    }
+
+    fun checkCounter():Int {
+    return counterModel.counter
+    }
+
 }
